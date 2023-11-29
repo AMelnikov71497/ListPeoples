@@ -1,0 +1,479 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.flex {
+    display: flex;
+}
+
+body {
+    background-color: #e5e5e5;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.container {
+    max-width: 2000px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.header__container {
+    box-shadow: 0 8px 10px 0px gray;
+    background-color: white;
+}
+
+
+.header {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.header__block-logo {
+    width: 50px;
+    margin-right: 50px;
+
+}
+
+#header__input-search {
+    height: 40px;
+    width: 100%;
+    padding-left: 10px;
+    border: 1px solid rgba(51, 51, 51, 0.2)
+}
+
+#header__input-search::placeholder {
+    color: rgba(176, 176, 176, 1);
+}
+
+.form__block-input {
+    width: 60%;
+}
+
+.clients__container {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    position: relative;
+}
+
+.blockModal {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: absolute;
+    top: 100px;
+    left: 200px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.table {
+    width: 100%;
+    
+}
+
+.app {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    margin-bottom: 30px;
+}
+
+.modalAddClient,
+.updateClientDate,
+.blockModalDelete {
+    width: 500px;
+    background-color: white;
+    position: relative;
+    padding: 30px;
+    z-index: 2;
+    
+}
+
+.blockModalDelete {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modalAddClient-btnClose,
+.updateClientBtnClose,
+.deleteClientBtnClose {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 30px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.modalAddClient-btnClose::before,
+.updateClientBtnClose::before,
+.deleteClientBtnClose::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #b0b0b0;
+    left: 0;
+    transform: rotate(45deg);
+}
+
+.modalAddClient-btnClose::after,
+.updateClientBtnClose::after,
+.deleteClientBtnClose::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #b0b0b0;
+    left: 0;
+    transform: rotate(-45deg);
+}
+
+.inputSurname,
+.inputName,
+.inputLastname {
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-bottom: 1px solid #b0b0b0;
+    margin-bottom: 20px;
+}
+
+.addClintBtn {
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 250px;
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    background-color: transparent;
+    border: 3px solid rgba(152, 115, 255, 1);
+    color: rgba(152, 115, 255, 1);
+    font-size: 18px;
+}
+
+.addClintBtn svg {
+    margin-right: 20px;
+}
+
+.title-new-client {
+    margin-bottom: 20px;
+}
+
+.bodyGrayFon {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: gray;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.bodyGrayFon--active {
+    opacity: .2;
+    visibility: visible;
+    transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+}
+
+.parentModalAddClient,
+.parentUpdateClientDate,
+.parentBlockModalDelete {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.formNewClient {
+    display: flex;
+    flex-direction: column;
+}
+
+.btnAddClient,
+.btnUpdateClient {
+    margin: 0 auto;
+    padding: 10px 50px;
+    cursor: pointer;
+    background-color: rgba(152, 115, 255, 1);
+    border: none;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.btnAddContacts {
+    border: none;
+    padding: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    background-color: rgba(200, 197, 209, .3);
+    display: flex;
+    justify-content: center;
+}
+
+.btnReset {
+    width: 80px;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.thTitle {
+    color: #b0b0b0;
+    padding: 20px;
+    text-align: start;
+}
+
+.blockAddContact {
+    display: flex;
+    margin-bottom: 10px;
+    border: 1px solid #C8C5D1;
+}
+
+.choices {
+    width: 40%;
+    margin-bottom: 0;
+}
+
+.blockInputs {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    background-color: red;
+}
+
+.clientThStyle {
+    text-align: start;
+    border-bottom: 1px solid #b0b0b0;
+    padding: 20px;
+}
+
+.thTitleId {
+    color:rgba(152, 115, 255, 1);
+    cursor: pointer;
+}
+
+.thTitleFio,
+.thTitleCreate,
+.thTitleUpdate {
+    cursor: pointer;
+}
+
+.labelSurName,
+.labelName,
+.labelLastName  {
+    flex-direction: column-reverse;
+}
+
+.inputContact,
+.inputGlobal {
+    width: 54%;
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+}
+
+.iconDeleteInputImg {
+    height: 100%;
+}
+
+#divcontacts {
+    background-color: rgba(200, 197, 209, .3);
+    
+}
+
+#divcontactsUpdate {
+    background-color: rgba(200, 197, 209, .3);
+    
+}
+
+.buttonUpdate,
+.buttonDelete {
+    display: flex;
+}
+
+/*Модальное окно изменения данных*/
+
+.updateClientTitle {
+    display: inline;
+    margin-right: 30px;
+}
+
+#updateClientForm {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.btnCloseUpdate {
+    display: block;
+    margin: 0 auto;
+}
+
+.updateInputSurname,
+.updateInputName,
+.updateInputLastname {
+    height: 50px;
+    border: none;
+    border-bottom: 1px solid #b0b0b0;
+    margin-bottom: 20px;
+}
+
+
+/*Модальное окно удалить клиента*/
+
+.deleteClientBtn {
+    background-color: #9873FF;
+    color: white;
+    padding: 10px 30px;
+    margin-bottom: 20px;
+}
+
+.titleblockModalDelete {
+    margin-bottom: 10px;
+}
+
+
+.blockModalDeleteText {
+    margin-bottom: 20px;
+}
+
+.divSelect {
+    width: 40%;
+    border: 1px solid #C8C5D1;
+    position: relative;
+}
+
+.divSelectHeader {
+   
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+}
+
+.divSelectBody {
+    position: absolute;
+    width: 100%;
+    background-color: white;
+    display: none;
+    border: 1px solid #C8C5D1;
+}
+
+.btnClose {
+    display: block;
+    margin: 0 auto;
+}
+
+.iconAddContacts {
+    margin-right: 5px;
+}
+
+.divSelectBody--active {
+    display: block;
+    z-index: 2;
+}
+
+.span0,
+.span1,
+.span2,
+.span3 {
+    display: block;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.iconHeaderSpan {
+    width: 13px;
+    height: 13px;
+    border-left: 3px solid #9873FF;
+    border-bottom: 3px solid #9873FF;
+    transform: rotate(-45deg);
+}
+
+.iconHeaderSpan--active {
+    transform: rotate(135deg);
+    margin-top: 5px;
+}
+
+.contactsLinkPhone,
+.contactsLinkVk,
+.contactsLinkEmail,
+.contactsLinkFb {
+    position: relative;
+    margin-right: 5px;
+}
+
+.contactsLinkPhone:hover .tooltipTel,
+.contactsLinkVk:hover .tooltipVk,
+.contactsLinkEmail:hover .tooltipEmail,
+.contactsLinkFb:hover .tooltipFb {
+    display: block;
+}
+
+.tooltipTel,
+.tooltipVk,
+.tooltipEmail,
+.tooltipFb {
+    position: absolute;
+    display: none;
+    top: -65px;
+    padding: 15px;
+    left: -65px;
+    background-color: #333333;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.tooltipTel {
+    min-width: 140px;
+}
+
+.spanIdClient {
+    color: #b0b0b0;
+}
+
+.arrowTooltip {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: #333333;
+    left: 65px;
+    top: 40px;
+    transform: rotate(45deg);
+}
+
+.inputContactNew {
+    display: none;
+}
+
+.btnAddContactNone {
+    display: none;
+}
+
+
+
+
+
+
